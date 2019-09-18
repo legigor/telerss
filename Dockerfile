@@ -5,9 +5,9 @@ COPY go.sum .
 RUN go mod download
 COPY . .
 RUN go test ./...
-RUN go build -o /telerss
+RUN CGO_ENABLED=0 GOOS=linux go build -o /app .
 
 FROM scratch
-COPY --from=builder /telerss /telerss
-ENTRYPOINT ["/telerss"]
+COPY --from=builder /app /app
+ENTRYPOINT ["/app"]
 
