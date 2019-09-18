@@ -1,13 +1,14 @@
 package main
 
 import (
-	"log"
 	"time"
+
+	log "github.com/sirupsen/logrus"
 )
 
 func main() {
 	for {
-		log.Println("Hello")
+		log.Info("Hello")
 		time.Sleep(3 * time.Second)
 	}
 }
