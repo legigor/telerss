@@ -16,7 +16,7 @@ func main() {
 		log.Info("Tick from CRON")
 	})
 	if err != nil {
-		log.Fatalf("Error scheduling the job: %w", err)
+		log.Fatalf("Error scheduling the job: %s", err)
 	} else {
 		c.Start()
 		for _, e := range c.Entries() {
