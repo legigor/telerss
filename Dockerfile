@@ -1,4 +1,4 @@
-FROM golang:1.13.0-stretch as builder
+FROM golang:1.21.3 as builder
 WORKDIR /src
 COPY go.mod . 
 COPY go.sum .
